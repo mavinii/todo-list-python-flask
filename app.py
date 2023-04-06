@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, url_for, redirect
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
 # Instance of the MongoClient class from the PyMongo library
-client = MongoClient('Your_mongodb_goes_here')
+client = MongoClient('mongodb+srv://user1:rjYKfcsRcgG6kMe1@cluster0.tbouul8.mongodb.net/?retryWrites=true&w=majority')
 
 db = client.flask_db
 todos = db.todos
@@ -22,3 +23,10 @@ def index():
 
     all_todos = todos.find()
     return render_template('index.html', todos=all_todos)
+
+
+# Route for deleting the items of the list
+@app.post('/<id>/delete/')
+def delete(id):
+    todos.delete_one({"_id": ObjectId(id)})
+    return redirect(url_for('index'))

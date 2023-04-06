@@ -13,6 +13,10 @@ This is a simple Flask app for managing a todo list, with items stored in a Mong
   <img alt="BetterDay" src="./web/preview/preview2.png" >
 </p>
 
+<p align="center">
+  <img alt="BetterDay" src="./web/preview/preview3.png" >
+</p>
+
 ## Requirements
 To run this app, you need:
 
