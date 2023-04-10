@@ -5,17 +5,48 @@
 
 This is a simple Flask app for managing a todo list, with items stored in a MongoDB database. The app allows users to submit new items with a content and degree field, where degree can be either "Important" or "Unimportant". The app then displays all the items in the database on the same page.
 
+## `/home`
+This is the home page that users will see when they first access the website
 <p align="center">
   <img alt="BetterDay" src="./web/preview/preview.png" >
 </p>
 
+## `/login`
+This route handles user login. If the user enters an invalid username or password, it displays an error message. Otherwise, it sets the session variable and redirects the user to the home page.
 <p align="center">
   <img alt="BetterDay" src="./web/preview/preview2.png" >
 </p>
 
+## `/register`
+This route handles user registration. If the user is already registered, it displays an error message. Otherwise, it hashes the password using bcrypt and inserts the new user into the database.
 <p align="center">
   <img alt="BetterDay" src="./web/preview/preview3.png" >
 </p>
+
+## `/todo`
+This route displays the todo page. The login_required decorator is used to make sure that only logged in users can access this page. If a user is not logged in, they will be redirected to the login page.
+<p align="center">
+  <img alt="BetterDay" src="./web/preview/preview4.png" >
+</p>
+
+## `/delete`
+This route handles the deletion of todo items. It takes the id of the item to be deleted as a parameter and deletes it from the database.
+<p align="center">
+  <img alt="BetterDay" src="./web/preview/preview5.png" >
+</p>
+
+## `mydb.users`
+MongoDB Atlas database that stores the users collection.
+<p align="center">
+  <img alt="BetterDay" src="./web/preview/preview6.png" >
+</p>
+
+## `mydb.todos`
+MongoDB Atlas database that stores the todos collection.
+<p align="center">
+  <img alt="BetterDay" src="./web/preview/preview7.png" >
+</p>
+
 
 ## Requirements
 To run this app, you need:
